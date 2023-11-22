@@ -14,7 +14,7 @@
 
 ### 📑 Architecture
 
-![image](https://github.com/DO-SOPT-CDS-APP-2/CDS-APP-2-SERVER/assets/102944310/61c4cfe5-6c3b-453d-a568-b9d34f62b7f7)
+![image](https://github.com/DO-SOPT-APP3-Airbnb/Airbnb-server/assets/80771842/8e04daf9-0347-4a27-8999-add9ae7c5223)
 
 
 ### 📖 Directory
