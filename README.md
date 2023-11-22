@@ -21,7 +21,7 @@
 
 <pre>
 ```
-├── CdsServerApplication.java
+├── ServerApplication.java
 ├── 🗂️ user
 │   ├── 🗂️ controller
 │   ├── 🗂️ domain
@@ -39,7 +39,7 @@
 │   ├── 🗂️ domain
 │   ├── 🗂️ repository
 │   └── 🗂️ service
-├── 🗂️ dormitory
+└── 🗂️ dormitory
     ├── 🗂️ controller
     ├── 🗂️ domain
     ├── 🗂️ repository
