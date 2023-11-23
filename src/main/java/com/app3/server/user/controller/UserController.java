@@ -1,6 +1,9 @@
 package com.app3.server.user.controller;
 
+import com.app3.server.common.dto.ApiResponse;
+import com.app3.server.common.exception.enums.SuccessType;
 import com.app3.server.user.controller.dto.response.UserGetResponse;
+import com.app3.server.user.domain.User;
 import com.app3.server.user.repository.UserJpaRepository;
 import com.app3.server.user.service.UserService;
 import jakarta.persistence.EntityNotFoundException;
@@ -22,7 +25,7 @@ public class UserController {
 
     // 목록 조회
     @GetMapping("/{id}")
-    public ResponseEntity<UserGetResponse> getUserProfile(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.getUserById(id));
+    public ApiResponse<User> getUserProfile(@PathVariable Long id) {
+        return ApiResponse.success(SuccessType.USER_SEARCH_SUCCESS, userService.getUserById(id));
     }
 }

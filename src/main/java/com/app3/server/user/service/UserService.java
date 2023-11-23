@@ -1,5 +1,7 @@
 package com.app3.server.user.service;
 
+import com.app3.server.common.exception.enums.ErrorType;
+import com.app3.server.common.exception.model.NotFoundException;
 import com.app3.server.user.controller.dto.response.UserGetResponse;
 import com.app3.server.user.domain.User;
 import com.app3.server.user.repository.UserJpaRepository;
@@ -16,8 +18,9 @@ import java.util.stream.Collectors;
 public class UserService {
     private final UserJpaRepository userJpaRepository;
 
-    public UserGetResponse getUserById(Long id) {
-        return UserGetResponse.of(userJpaRepository.findByIdOrThrow(id));
+    public User getUserById(Long id) {
+        return userJpaRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException(ErrorType.USER_NOT_FOUND_EXCEPTION));
     }
 }
 
