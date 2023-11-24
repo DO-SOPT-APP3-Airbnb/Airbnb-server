@@ -1,6 +1,7 @@
 package com.app3.server.dormitory.service;
 
 import com.app3.server.dormitory.controller.dto.response.DormitoryGetResponse;
+import com.app3.server.dormitory.controller.dto.response.DormitoryImageGetResponse;
 import com.app3.server.dormitory.domain.Dormitory;
 import com.app3.server.dormitory.repository.DormitoryJpaRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,12 @@ public class DomitoryService {
         return dormitoryJpaRepository.findAll()
                 .stream()
                 .map(DormitoryGetResponse::of)
+                .collect(Collectors.toList());
+    }
+    public List<DormitoryImageGetResponse> getDormitoryImages() {
+        return dormitoryJpaRepository.findAll()
+                .stream()
+                .map(DormitoryImageGetResponse::of)
                 .collect(Collectors.toList());
     }
 }
