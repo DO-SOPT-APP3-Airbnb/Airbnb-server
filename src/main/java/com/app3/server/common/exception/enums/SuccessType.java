@@ -10,7 +10,8 @@ public enum SuccessType {
 
     USER_SEARCH_SUCCESS(HttpStatus.OK, "유저 닉네임 조회에 성공하였습니다."),
     REGION_SEARCH_SUCCESS(HttpStatus.OK, "지역 이미지 조회에 성공하였습니다."),
-    DORMITORY_SEARCH_SUCCESS(HttpStatus.OK, "숙소 정보 조회에 성공하였습니다.")
+    DORMITORY_SEARCH_SUCCESS(HttpStatus.OK, "숙소 정보 조회에 성공하였습니다."),
+    DORMITORY_IMAGE_SEARCH_SUCCESS(HttpStatus.OK, "숙소 이미지 조회에 성공하였습니다.")
             ;
 
     private final HttpStatus httpStatus;

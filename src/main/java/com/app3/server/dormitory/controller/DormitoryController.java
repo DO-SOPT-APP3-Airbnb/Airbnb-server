@@ -3,6 +3,7 @@ package com.app3.server.dormitory.controller;
 import com.app3.server.common.dto.ApiResponse;
 import com.app3.server.common.exception.enums.SuccessType;
 import com.app3.server.dormitory.controller.dto.response.DormitoryGetResponse;
+import com.app3.server.dormitory.controller.dto.response.DormitoryImageGetResponse;
 import com.app3.server.dormitory.service.DomitoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,10 @@ public class DormitoryController {
     @GetMapping
     public ApiResponse<List<DormitoryGetResponse>> getDormitories() {
         return ApiResponse.success(SuccessType.DORMITORY_SEARCH_SUCCESS, domitoryService.getDormitories());
+    }
+    @GetMapping("/image")
+    public ApiResponse<List<DormitoryImageGetResponse>> getDormitoryImages() {
+        return ApiResponse.success(SuccessType.DORMITORY_IMAGE_SEARCH_SUCCESS, domitoryService.getDormitoryImages());
     }
 
 }
