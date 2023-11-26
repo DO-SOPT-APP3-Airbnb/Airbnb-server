@@ -16,8 +16,8 @@ import java.util.stream.Collectors;
 public class DomitoryService {
     private final DormitoryJpaRepository dormitoryJpaRepository;
 
-    public List<DormitoryGetResponse> getDormitories() {
-        return dormitoryJpaRepository.findAll()
+    public List<DormitoryGetResponse> getDormitories(Integer dormitoryId) {
+        return dormitoryJpaRepository.findByDormitoryId(dormitoryId)
                 .stream()
                 .map(DormitoryGetResponse::of)
                 .collect(Collectors.toList());

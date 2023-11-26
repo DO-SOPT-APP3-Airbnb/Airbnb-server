@@ -20,9 +20,10 @@ import java.util.List;
 public class DormitoryController {
     private final DomitoryService domitoryService;
 
-    @GetMapping
-    public ApiResponse<List<DormitoryGetResponse>> getDormitories() {
-        return ApiResponse.success(SuccessType.DORMITORY_SEARCH_SUCCESS, domitoryService.getDormitories());
+    @GetMapping("/{dormitoryId}")
+    public ApiResponse<List<DormitoryGetResponse>> getDormitories(@PathVariable Integer dormitoryId) {
+        List<DormitoryGetResponse> dormitories = domitoryService.getDormitories(dormitoryId);
+        return ApiResponse.success(SuccessType.DORMITORY_SEARCH_SUCCESS, dormitories);
     }
     @GetMapping("/image/{dormitoryId}")
     public ApiResponse<List<DormitoryImageGetResponse>> getDormitoryImages(@PathVariable Integer dormitoryId) {
