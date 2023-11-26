@@ -18,6 +18,8 @@ public class Dormitory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private Integer dormitoryId;
     private String imageUrl;
     private String description;
     private Integer distance;
@@ -25,7 +27,8 @@ public class Dormitory {
     private Integer price;
     private Double scope;
     @Builder
-    public Dormitory(String imageUrl, String description, Integer distance, String travelDate, Integer price, Double scope) {
+    public Dormitory(Integer dormitoryId, String imageUrl, String description, Integer distance, String travelDate, Integer price, Double scope) {
+        this.dormitoryId = dormitoryId;
         this.imageUrl = imageUrl;
         this.description = description;
         this.distance = distance;
